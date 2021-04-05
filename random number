@@ -1,0 +1,25 @@
+// Collect input from a user
+let inputH = prompt("Please enter a high number.");
+let inputL = prompt("Please enter a number at least 1 lower than your high number");
+let randomInput;
+
+// Convert the input to a number
+inputH = parseInt(inputH);
+inputL = parseInt(inputL);
+console.log(inputH);
+console.log(inputL);
+
+if (inputH && inputL) { //checks if both inputs are numbers- then runs below code
+
+  
+// Use Math.random() and the user's number to generate a random number
+randomInput = Math.floor(Math.random() * (inputH - inputL + 1) ) + inputL; 
+//this represents range of numbers we want, high number - low number +1 to get the range. You add + 1 because the floor brings highest number down to 1. Then +inputL gives you the numbers you can chose from.
+
+console.log(randomInput);
+
+// Create a message displaying the random number
+console.log(`${randomInput} is a random number between ${inputH} and ${inputL}`);
+} else {
+  console.log("Please enter a number");
+}
